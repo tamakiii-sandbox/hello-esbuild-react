@@ -19,8 +19,8 @@ build: \
 clean:
 	rm -rf dist
 
-dist/index.js: src/index.ts
-	npx esbuild src/index.ts --bundle --minify --sourcemap --outfile=$@
+dist/index.js: src/index.tsx
+	npx esbuild src/index.tsx --bundle --minify --sourcemap --outfile=$@
 
 dist:
 	mkdir -p $@
