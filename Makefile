@@ -14,13 +14,17 @@ node_modules:
 
 build: \
 	dist \
-	dist/index.js
+	dist/index.js \
+	dist/index.html
 
 clean:
 	rm -rf dist
 
 dist/index.js: src/index.tsx
 	npx esbuild src/index.tsx --bundle --minify --sourcemap --outfile=$@
+
+dist/index.html: src/index.html
+	cp $< $@
 
 dist:
 	mkdir -p $@
